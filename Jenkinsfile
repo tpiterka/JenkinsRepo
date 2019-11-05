@@ -13,7 +13,7 @@ pipeline{
     }
     stage('deploy'){
       steps{
-      sh 'echo "It's dangerous to go alone, take this!"'
+      sh 'echo "It is dangerous to go alone, take this!"'
       }
     }
   }
