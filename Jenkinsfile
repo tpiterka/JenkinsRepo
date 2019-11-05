@@ -13,9 +13,16 @@ pipeline{
     }
     stage('deploy'){
       steps{
-      sh 'echo "It is dangerous to go alone, take this!"'
+        sh 'echo "It is dangerous to go alone, take this!"'
+        sh 'echo "Data" > generatedFile.txt'
       }
     }
-  }
+  }  
+  post{
+    always{
+      archiveArtifacts artifacts: 'generatedFile.txt', onlyIfSuccessful: true
+      }
+    }
+  
 
 }
